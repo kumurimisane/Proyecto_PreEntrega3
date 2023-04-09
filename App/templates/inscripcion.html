@@ -1,0 +1,21 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+
+
+{% block subtitulo %}
+    <h2 data-scroll-reveal="enter from the bottom after 0.1s" ><i class="fa fa-circle-o-notch"></i> Inscripcion <i class="fa fa-circle-o-notch"></i> </h2>
+{% endblock subtitulo %}
+    
+
+
+
+
+{% block elemento_dinamico %}
+<p style="font-weight: 5px; font-size: xx-large;margin-top: 25px; margin-bottom: 25px;"> <b> Formulario de Inscripcion </b></p>        
+
+      <form action="{% url 'incripcion' %}" method="POST"> {% csrf_token %}
+        {{miFormulario.as_p}}
+        <button type="submit"> Enviar </button>
+      </form>  
+{% endblock elemento_dinamico %}
